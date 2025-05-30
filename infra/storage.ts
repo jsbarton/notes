@@ -6,3 +6,14 @@
 
 // We're using this bucket later to handle file uploads
 export const bucket = new sst.aws.Bucket("Uploads");
+
+// Create the DynamoDB table
+export const table = new sst.aws.Dynamo("Notes", {
+  fields: {
+    userId: "string",
+    noteId: "string",
+  },
+  // The primary key uniquely identifies each item in the table,
+  // so that no two items can have the same key
+  primaryIndex: { hashKey: "userId", rangeKey: "noteId" },
+});
