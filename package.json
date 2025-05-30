@@ -1,13 +1,19 @@
 {
-  "name": "monorepo-template",
+  "name": "notes",
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "shell": "sst shell"
+  },
   "devDependencies": {
     "@tsconfig/node22": "^22",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
   },
   "dependencies": {
     "sst": "^3"
