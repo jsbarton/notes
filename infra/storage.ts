@@ -8,6 +8,9 @@
 export const bucket = new sst.aws.Bucket("Uploads");
 
 // Create the DynamoDB table
+
+// Our database is not exposed publicly and is only invoked by our Lambda functions.
+// But our users will be uploading files directly to the S3 bucket that we created.
 export const table = new sst.aws.Dynamo("Notes", {
   fields: {
     userId: "string",
