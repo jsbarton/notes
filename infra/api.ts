@@ -14,6 +14,10 @@ export const api = new sst.aws.ApiGatewayV2("Api", {
       },
     },
   },
+  cors: {
+    allowMethods: ["GET", "PUT", "POST", "DELETE", "HEAD"],
+    allowOrigins: ["*"],
+  },
 });
 
 // Define the API routes

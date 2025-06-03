@@ -5,7 +5,12 @@
 // files, images, or even entire websites
 
 // We're using this bucket later to handle file uploads
-export const bucket = new sst.aws.Bucket("Uploads");
+export const bucket = new sst.aws.Bucket("Uploads", {
+  cors: {
+    allowMethods: ["GET", "PUT", "POST", "DELETE", "HEAD"],
+    allowOrigins: ["*"],
+  },
+});
 
 // Create the DynamoDB table
 
