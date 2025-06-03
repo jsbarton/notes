@@ -20,3 +20,6 @@ export const table = new sst.aws.Dynamo("Notes", {
   // so that no two items can have the same key
   primaryIndex: { hashKey: "userId", rangeKey: "noteId" },
 });
+
+// Create a secret for Stripe
+export const secret = new sst.Secret("StripeSecretKey");
