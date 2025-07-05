@@ -1,5 +1,7 @@
 const config = {
   // Frontend config
+  STRIPE_KEY:
+    "pk_test_51RVuvQBNE3BHedBqCGoMI1lnd3JAMbbnzsbLZ1keEcFuuC2rGvOiFpE2sblpAkZKKPGO0w6og0sA1TjbE0gZYfVA00f7eKdd5v",
   MAX_ATTACHMENT_SIZE: 5000000,
   // Backend config
   // Environment variables from serverless backend
