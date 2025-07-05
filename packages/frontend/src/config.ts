@@ -1,4 +1,6 @@
 const config = {
+  // Frontend config
+  MAX_ATTACHMENT_SIZE: 5000000,
   // Backend config
   // Environment variables from serverless backend
   s3: {
