@@ -9,12 +9,13 @@ import { onError } from "../lib/errorLib";
 import { useFormFields } from "../lib/hooksLib";
 
 export default function Login() {
-  const { isAuthenticated, userHasAuthenticated } = useAppContext();
+  const { userHasAuthenticated } = useAppContext();
   const [fields, handleFieldChange] = useFormFields({
     email: "",
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+
   function validateForm() {
     return fields.email.length > 0 && fields.password.length > 0;
   }

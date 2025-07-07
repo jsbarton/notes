@@ -2,6 +2,8 @@ import { table, secret } from "./storage";
 
 // Create the API
 export const api = new sst.aws.ApiGatewayV2("Api", {
+  domain:
+    $app.stage === "production" ? "<api.scratchserverless.com>" : undefined,
   // tells the API we want the given props to be applied to all routes in the API
   transform: {
     route: {
