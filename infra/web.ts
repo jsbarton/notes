@@ -10,6 +10,13 @@ export const frontend = new sst.aws.StaticSite("Frontend", {
     output: "dist",
     command: "npm run build",
   },
+  domain:
+    $app.stage === "production"
+      ? {
+          name: "scratchserverless.com",
+          redirects: ["www.scratchserverless.com"],
+        }
+      : undefined,
   // So we don't have to hardcode these values in the frontend
   environment: {
     VITE_REGION: region,
